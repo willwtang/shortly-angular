@@ -5,4 +5,5 @@ var links = angular.module('shortly.links', ['shortly.services'])
   Links.getAll().then(function(data) {
     $scope.data.links = data;
   });
+  
 });

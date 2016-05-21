@@ -11,10 +11,11 @@ angular.module('shortly.services', [])
     });
   };
   var addOne = function(url) {
+    console.log(url);
     return $http({
       url: '/api/links',
       method: 'POST',
-      data: url
+      data: {url: url}
     })
     .then(function(resp) { 
       return resp; 

@@ -1,6 +1,13 @@
-<div id='container'>
+<div id='container' ng-app='shortly.shorten', >
 <!-- Your code here -->
-
+	<form name='urlForm' ng-controller='ShortenController'>
+    <input type='url' name='input' ng-model='url' required>
+    <input type='submit' value='Shorten' ng-show='!urlForm.input.$error.url && !urlForm.input.$error.required' ng-click='addLink()'>
+    <div role='alert'>
+      <span class='message' ng-show='urlForm.input.$error.required'>Required!</span>
+      <span class='message' ng-show='urlForm.input.$error.url'>Not a valid URL!</span>
+    </div>
+  </form>
 </div>
 
 
